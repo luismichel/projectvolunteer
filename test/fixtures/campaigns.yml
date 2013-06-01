@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id_campaign: 1
+  name: MyString
+  id_organization: 1
+  description: MyText
+  economic_goal: 1
+  man_power_goal: 1
+  location: MyString
+  date_event: 2013-06-01 14:09:48
+  date_goal: 2013-06-01 14:09:48
+  id_category: 1
+
+two:
+  id_campaign: 1
+  name: MyString
+  id_organization: 1
+  description: MyText
+  economic_goal: 1
+  man_power_goal: 1
+  location: MyString
+  date_event: 2013-06-01 14:09:48
+  date_goal: 2013-06-01 14:09:48
+  id_category: 1
