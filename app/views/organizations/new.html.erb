@@ -1,0 +1,30 @@
+<h1>Registration</h1>
+
+<div>
+	<%= form_for(@organization) do |f| %>
+	
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+
+		<%= f.label :address_hq %>
+		<%= f.text_field :address_hq %>
+
+		<%= f.label :phone_number %>
+		<%= f.text_field :phone_number %>
+
+		<%= f.label :website_url %>
+		<%= f.text_field :website_url %>
+
+
+		<%= f.label :register_date %>
+		<%= f.text_field :register_date %>
+		
+		<%= f.hidden_field :id_user, :value => session[:user_id] %>
+
+		<p>
+		<%= f.submit "Create organization" %>
+		</p>
+	<% end %>
+
+	<%= session[:user_id] %>
+</div>

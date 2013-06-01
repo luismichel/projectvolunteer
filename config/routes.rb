@@ -6,6 +6,7 @@ ProjectVolunteer::Application.routes.draw do
   root :to => 'home#index'
   get "/login", to: 'home#login'
 
+  resources :organizations
 
   #get "home/index"
 
