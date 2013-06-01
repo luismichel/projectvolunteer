@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601193958) do
+ActiveRecord::Schema.define(:version => 20130601210954) do
 
   create_table "campaigns", :force => true do |t|
     t.integer  "id_campaign"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20130601193958) do
     t.string   "uid"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.string   "profile_pic"
   end
 
 end
