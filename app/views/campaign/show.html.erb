@@ -20,9 +20,9 @@
         </div>
         <span class="left padding-left-1 bolder result"> 60% </span>
         <div class="btn-support right margin-right-1">
-            
+
             <% if(current_user.id != @campaign.id_user) %>
-	<%= link_to "Volunteer", :controller => :campaign_member, 
+	<%= link_to "Volunteer", :controller => :campaign_member,
                            :action => 'create',
                            :id_user => current_user.id,
                            :id_campaign => @campaign.id %>
