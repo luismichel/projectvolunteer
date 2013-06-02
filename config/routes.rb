@@ -2,7 +2,7 @@ ProjectVolunteer::Application.routes.draw do
 
   resources :users, :controller => 'user'
   resources :campaigns, :controller => 'campaign'
-  post '/campaigns/new', to: 'campaign#new' 
+  post '/campaigns/new', to: 'campaign#new'
 
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
@@ -13,8 +13,9 @@ ProjectVolunteer::Application.routes.draw do
   get "/user/:id", to: 'user#show'
   get "/profile", to: 'user#show'
   get "/profile/edit", to: 'user#edit'
-  get "/path2", to: 'organizations#index'
-  get "/path1", to: 'home#index'
+  get "/organizations/index", to: 'organizations#index'
+  get "/campaigns/index", to: 'campaigns#index'
+  get "/about", to: 'home#about'
 
   resources :organizations
 
@@ -69,7 +70,7 @@ ProjectVolunteer::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   
+
 
   # See how all your routes lay out with "rake routes"
 
@@ -77,5 +78,5 @@ ProjectVolunteer::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-    
+
 end
