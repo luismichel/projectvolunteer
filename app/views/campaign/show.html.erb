@@ -1,6 +1,35 @@
-<h1><%= @campaign.name %></h1>
-<ul>
-<li><p><%= @campaign.description %></p></li>
-<li><p>Belongs to <%= link_to(Organization.find(@campaign.id_organization).name, Organization.find(@campaign.id_organization)) %></p></li>
-<li><p>Started by <%= link_to(User.find(@campaign.id_user).name, User.find(@campaign.id_user) )   %></p></li>
-</ul>
+<div class="campaign-description">
+    <h1><%= @campaign.name %></h1>
+    <div class="campaign-picture">
+        <%= image_tag(@campaign.avatar.url(:normal), :alt => "campaign") %>
+    </div>
+    <p class="campaign-text">
+        <%= @campaign.description %>
+    </p>
+    <p class="campaign-origin">
+        Launched by  <%= link_to User.find(@campaign.id_user).name, User.find(@campaign.id_user)  %> via <%= link_to Organization.find(@campaign.id_organization).name, Organization.find(@campaign.id_organization) %>
+    </p>
+    <div "bar-wrapper">
+        <h3>Human Power</h3>
+        <div class="bar-counter left">
+            <div class="bar-graphic left">
+            </div>
+        </div>
+        <span class="left padding-left-1 bolder result"> 60% </span>
+        <div class="btn-support right margin-right-1">
+            <a href="#">Volunteer!</a>
+        </div>
+    </div>
+    <br>
+    <div "bar-wrapper">
+        <h3>Donations</h3>
+        <div class="bar-counter left">
+            <div class="bar-graphic left">
+            </div>
+        </div>
+        <span class="left padding-left-1 bolder result"> 60% </span>
+        <div class="btn-support right margin-right-1">
+            <a href="#">Donate!</a>
+        </div>
+    </div>
+</div>
