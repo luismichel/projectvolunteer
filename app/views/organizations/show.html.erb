@@ -11,8 +11,24 @@
 	</p>
 	<div><p><%= @organization.description %></p></div>
 
+	<% if(current_user) then if(current_user.id == @organization.id_user) then %>
 	<%= button_to 'Create new campaign', new_campaign_path(:id_organization => @organization.id), :method => 'post' %>
+	<% end end %>
 
+	<ul>
+	<p>
+	<h3>Campaigns</h3>
+	<% if(Campaign.where("id_organization = ?", @organization.id).size != 0) then %>
+	<% Campaign.where("id_organization = ?", @organization.id).each do |campaign| %></p>
+	<li class="organization-grid-item">
+	  <!-- <%= image_tag @organization.avatar.url(:thumb) %></br> -->
+	  <%= link_to campaign.name, campaign %>
+	</li>
+	<% end %>
+	<% else %> No campaigns to show 
+	<% end %>
+	
+	</ul>
 </div>
 
 
