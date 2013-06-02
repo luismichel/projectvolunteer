@@ -210,7 +210,8 @@ img.bg {
     padding-right: 0px;
     padding-left: 0px;
     margin-top: 3px;
-    margin-left: 1px;
+    margin-left: 15px;
+    margin-top: 15px;
     width: 300px;
     height: 440px;
     background-color: #E5FF52;
@@ -235,6 +236,8 @@ img.bg {
     margin:10px auto;
     width: 270px;
     height: 30px;
+    font-size: 20px;
+    line-height: 27px;
     text-align: center;
 }
 
@@ -355,17 +358,17 @@ img.bg {
 
 @media all and (max-width: 699px) and (min-width: 520px) {
     .image-grid{
-        width: 602px;
+        width: 630px;
     }
 }
 @media all and (max-width: 1200px) and (min-width: 700px) {
     .image-grid{
-        width: 903px;
+        width: 945px;
     }
 }
 @media all and (min-width: 1201px) {
     .image-grid{
-        width: 1204px;
+        width: 1260px;
     }
 }
 div[class*="volunteer-sp"]{
