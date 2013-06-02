@@ -5,6 +5,13 @@
     <%= link_to "Sign out", signout_path, id: "sign_out" %>
   <% else %>
     <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    <br/>
+    Or
+    <%= form_tag(:action => 'login_attempt') do %>
+		<p>Email:</br> <%= text_field_tag(:username_or_email) %></p> 
+		<p>Password:</br> <%= password_field_tag :login_password %></p> 
+		<%= submit_tag("Log In") %>
+	<% end %>
   <% end %>
 
 </div>
