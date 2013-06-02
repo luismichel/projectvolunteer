@@ -9,6 +9,9 @@
     <p class="campaign-origin">
         Launched by  <%= link_to User.find(@campaign.id_user).name, User.find(@campaign.id_user)  %> via <%= link_to Organization.find(@campaign.id_organization).name, Organization.find(@campaign.id_organization) %>
     </p>
+    <p class="campaign-origin">
+        The event will take place in <%= @campaign.date_event %>
+    </p>
     <div "bar-wrapper">
         <h3>Human Power</h3>
         <div class="bar-counter left">

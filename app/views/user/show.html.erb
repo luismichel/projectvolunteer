@@ -23,6 +23,7 @@
             <h3>Campaigns</h3>
 		<% Campaign.where("id_user = ?",@user.id).each do |campaign| %></p>
 		<li class="organization-grid-item">
+		  <%= image_tag campaign.avatar.url(:thumb) %></br>
 		  <%= link_to campaign.name, campaign %>
 		</li>
 		<% end %>
