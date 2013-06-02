@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require modal
 //= require_tree .
 $(function() {
     $("#main-h1").animate({left : "+=145px"},{ queue: false, duration: 400 });

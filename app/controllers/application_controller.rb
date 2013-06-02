@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  layout Proc.new { |controller| controller.request.xhr? ? nil : 'application' }
+
   private
 
   def current_user
@@ -9,3 +11,4 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
 end
+
