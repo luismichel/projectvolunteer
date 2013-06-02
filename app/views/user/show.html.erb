@@ -18,15 +18,29 @@
 		  <%= link_to organization.name, organization %>
 		</li>
 		<% end %>
+		<% OrganizationMemberships.where("user_id = ?",@user.id).each do |membership| %></p>
+		<li class="organization-grid-item">
+		  <%= image_tag Organization.find(membership.organization_id).avatar.url(:thumb) %></br>
+		  <%= link_to Organization.find(membership.organization_id).name, Organization.find(membership.organization_id) %>
+		</li>
+		<% end %>
         </div>
         <div class="user-campaigns">
             <h3>Campaigns</h3>
+		<ul>
 		<% Campaign.where("id_user = ?",@user.id).each do |campaign| %></p>
 		<li class="organization-grid-item">
 		  <%= image_tag campaign.avatar.url(:thumb) %></br>
 		  <%= link_to campaign.name, campaign %>
 		</li>
 		<% end %>
+		<% CampaignMember.where("id_user = ?",@user.id).each do |campaignmember| %></p>
+		<li class="organization-grid-item">
+		  <%= image_tag Campaign.find(campaignmember.id_campaign).avatar.url(:thumb) %></br>
+		  <%= link_to Campaign.find(campaignmember.id_campaign).name, Campaign.find(campaignmember.id_campaign) %>
+		</li>
+		<% end %>
+		</ul>
         </div>
     </div>
 </div>
