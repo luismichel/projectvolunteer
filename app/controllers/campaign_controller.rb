@@ -7,6 +7,10 @@ class CampaignController < ApplicationController
 		end
 	end
 
+	def index
+		@campaigns = Campaign.all
+	end
+
 	def create
 		if(current_user)
 			@campaign = Campaign.new(params[:campaign])
