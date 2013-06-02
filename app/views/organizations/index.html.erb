@@ -1,6 +1,9 @@
 <div class="centered-div">
+<% if(current_user) then %>
+<%= link_to "[+] Create organization", "/organizations/new" %>
+<% end %>
 <ul>
-<% @organizations.each do |organization| %>
+<p><% @organizations.each do |organization| %></p>
 <li class="organization-grid-item">
   <%= image_tag organization.avatar.url(:thumb) %></br>
   <%= link_to organization.name, organization %>
