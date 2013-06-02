@@ -45,13 +45,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </a>
-              <a class="brand" href="#">ProjectVolunteer</a>
+              <a class="brand" href="#">
+                <%= image_tag("logo.png", :alt => "logo") %>
+              </a>
               <div class="container-fluid nav-collapse">
-                <ul class="nav">
-                  <li><%= link_to "Home", "/path1"  %></li>
-                  <li><%= link_to "Organizations", "/path2"  %></li>
-                  <li><%= link_to "About", "/path3"  %></li>
-                </ul>
                   <div id="user_nav" class="right">
                       <% if current_user %>
                         <%= link_to "Sign out", signout_path, id: "sign_out", class: "login-action right" %>
@@ -60,6 +57,11 @@
                         <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class:"right"%>
                       <% end %>
                   </div>
+                <ul class="nav right">
+                  <li><%= link_to "Home", "/path1"  %></li>
+                  <li><%= link_to "Organizations", "/path2"  %></li>
+                  <li><%= link_to "About", "/path3"  %></li>
+                </ul>
               </div><!--/.nav-collapse -->
             </div>
           </div>

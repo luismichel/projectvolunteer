@@ -11,3 +11,40 @@ body{
 .navbar{
     margin-bottom: 0px;
 }
+.navbar-inner{
+    min-height: 90px;
+    font-size: 24px;
+    background-color: #00e0b0 !important;
+    color: #000 !important;
+    filter: none;
+    background-image: none;
+    background-repeat: no-repeat;
+    border: 0px;
+}
+.navbar .nav>li>a {
+    float: none;
+    padding: 10px 15px 10px;
+    color: #000;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #F7F7F7;
+    font-size: 24;
+    color: #FFF;
+}
+.navbar .nav>li>a:hover{
+    color: #e5ff53;
+}
+.navbar .nav>li{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-left: 10px;
+    background-color: #3b4952;
+}
+
+.navbar .nav {
+    margin-top: 22px;
+}
+.nav-collapse .nav{
+    float: right;
+}

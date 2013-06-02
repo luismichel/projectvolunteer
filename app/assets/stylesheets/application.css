@@ -68,12 +68,12 @@ footer p{
     background-color: #3b4952;
 }
 #user_nav a{
+    margin-top: 20px;
     display: block;
     padding: 10px 5px 10px;
     font-size: 15px;
     font-weight: 200;
-    color: #777;
-    text-shadow: 0 1px 0 #FFF;
+    color: #888;
 }
 #main-h1{
     position: absolute;
