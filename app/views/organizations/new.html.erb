@@ -19,7 +19,10 @@
 		<%= f.label :register_date %>
 		<%= f.text_field :register_date %>
 		
-		<%= f.hidden_field :id_user, :value => session[:user_id] %>
+		<%= f.hidden_field :id_user, :value => 1 %>
+
+		<%= f.label "Category" %>
+		<%= select('organization', 'id_category', Category.all.collect  {|category| [category.name, category.id]}) %>
 
 		<p>
 		<%= f.submit "Create organization" %>
