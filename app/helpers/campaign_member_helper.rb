@@ -1,0 +1,2 @@
+module CampaignMemberHelper
+end
