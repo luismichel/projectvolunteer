@@ -223,7 +223,7 @@ img.bg {
 }
 .campaign-picture img{
     max-width: 100%;
-    min-height: 100%;
+    max-height: 100%;
 }
 .campaign-text{
     margin: 10px auto;
@@ -341,6 +341,20 @@ img.bg {
 }
 .clear{
     clear: both;
+}
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+#donate-slides{
+    padding-top: 1px;
+    margin: 0px auto;
+    margin-top: -35px;
+    margin-bottom: 35px;
+    background-color: #333;
+    width: 700px;
+    height: 300px;
+    color: #F7F7F7;
 }
 /*B&W*/
 .bw {

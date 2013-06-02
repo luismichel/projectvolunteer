@@ -17,4 +17,30 @@
 //= require_tree .
 $(function() {
     $("#main-h1").animate({left : "+=145px"},{ queue: false, duration: 400 });
+
+    $("#btn-donate").bind("click", function(e){
+        console.log("SEM Vamos!");
+        e.preventDefault();
+        $("#donate-slides").toggleClass("hidden");
+        var offset = $("#donate-slides").offset();
+        offset.left -= 20;
+        offset.top -= 20;
+        $('html, body').animate({
+            scrollTop: offset.top,
+            scrollLeft: offset.left
+        });
+
+        $(function() {
+            $( "#slider-range-max" ).slider({
+              range: "max",
+              min: 1,
+              max: 10,
+              value: 2,
+              slide: function( event, ui ) {
+                $( "#amount" ).val( ui.value );
+              }
+            });
+            $( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
+        });
+    });
 });
