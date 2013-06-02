@@ -3,7 +3,7 @@
 	<p>
 		<%= @organization.address_hq %></br>
 		<%= @organization.phone_number %></br>
-		<%= link_to @organization.website_url, @organization.website_url %></br>
+		<%= link_to @organization.website_url %></br>
 		<%= Category.find(@organization.id_category).name %>
 	</p>
 	<p>
@@ -11,13 +11,8 @@
 	</p>
 	<div><p><%= @organization.description %></p></div>
 
-	<% if(current_user) then if(current_user.id == @organization.id_user) %>
-	<%= button_to "Create campaign", {:controller => :campaigns, :action => 'new', :id => @organization.id }, :method => :get %>
-	<% end end%>
+	<%= button_to 'Create new campaign', new_campaign_path(:id_organization => @organization.id), :method => 'post' %>
 
-	<% if(current_user) then if(current_user.id != @organization.id_user) %>
-	<%= button_to "Join organization", {:controller => :organizations, :action => 'member_join', :id => current_user.id }, :method => :get %>
-	<% end end%>
 </div>
 
 
