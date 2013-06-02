@@ -199,6 +199,175 @@ img.bg {
 .right{
     float: right;
 }
+.image-grid{
+    margin: 0px auto;
+    padding-top: 1px;
+
+}
+.campaign-item{
+    position: relative;
+    padding-top: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-top: 3px;
+    margin-left: 1px;
+    width: 300px;
+    height: 440px;
+    background-color: #E5FF52;
+}
+.campaign-picture{
+    margin: 12px auto;
+    width: 90%;
+    height: 52%;
+}
+.campaign-picture img{
+    max-width: 100%;
+    min-height: 100%;
+}
+.campaign-text{
+    margin: 10px auto;
+    width: 270px;
+    height: 100px;
+    text-align: center;
+    font-size: 15px;
+}
+.resources-block{
+    margin:10px auto;
+    width: 270px;
+    height: 30px;
+    text-align: center;
+}
+
+.resources-name{
+    width: 70%;
+    height: 100%;
+    background-color: #36E0B0;
+    color:#3B4952;
+}
+.resources-quantity{
+    width: 30%;
+    height: 100%;
+    background-color: #3B4952;
+    color: #E5FF52;
+}
+.img-btn{
+    margin-right: 15px;
+}
+
+.campaign-description{
+    position: relative;
+    clear: both;
+    margin: 40px auto;
+    padding-top: 1px;
+    padding-left: 15px;
+    width: 800px;
+    height: 900px;
+    background-color: #E1F850;
+    color: #35434E;
+    box-shadow: 2px 2px 2px #CCC;
+}
+.campaign-description h1{
+    margin-top: 25px;
+    letter-spacing: 2px;
+    font-weight: 200;
+}
+.campaign-description .campaign-picture{
+    display: table-cell; vertical-align: middle;
+    margin: 5px auto;
+    padding-top: 1px;
+    width: 780px;
+    height: 400px;
+}
+.campaign-description .campaign-picture img{
+    margin: 0px auto;
+    max-width: 100%;
+    min-height: 100% !important;
+}
+
+.campaign-description .campaign-text{
+    margin: 15px auto;
+    width: 90%;
+    text-align: center;
+    font-size: 15px;
+}
+.campaign-origin{
+    margin: 20px auto;
+    text-align: center;
+    width: 780px;
+}
+.bar-counter{
+    width: 500px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #34454F !important;
+}
+.bar-graphic{
+    width: 60%;
+    height: 30px;
+    background-color: #00EFB8 !important;
+    border-radius: 15px;
+}
+.btn-support{
+    width: 120px;
+    height: 25px;
+    padding: 5px;
+    background-color: #35434E;
+    color: #00EFB8;
+}
+.btn-support a{
+    margin: 0px auto;
+    font-size: 17px;
+    color: #00EFBB;
+    text-decoration: none;
+    text-align: center;;
+}
+.bar-wrapper{
+    clear:both;
+}
+.padding-left-1{
+    padding-left: 10px;
+}
+.margin-right-1{
+    margin-right: 32px;
+}
+.bolder{
+    font-weight: bolder;
+}
+.result{
+    font-size: 20px;
+}
+.clear{
+    clear: both;
+}
+/*B&W*/
+.bw {
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+  -webkit-filter: grayscale(80%);
+}
+
+.bw:hover {
+    -webkit-filter: none;
+}
+
+@media all and (max-width: 699px) and (min-width: 520px) {
+    .image-grid{
+        width: 602px;
+    }
+}
+@media all and (max-width: 1200px) and (min-width: 700px) {
+    .image-grid{
+        width: 903px;
+    }
+}
+@media all and (min-width: 1201px) {
+    .image-grid{
+        width: 1204px;
+    }
+}
 div[class*="volunteer-sp"]{
     float: left;
     margin-left: 3%;

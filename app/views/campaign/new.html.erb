@@ -22,7 +22,7 @@
         <%= select('campaign', 'id_category', Category.all.collect  {|category| [category.          name, category.id]}) %>
       <%= f.hidden_field :id_user, :value => current_user.id %>
 
-      <%= f.hidden_field :id_organization, :value => params[:id] %>
+      <%= f.hidden_field :id_organization, :value => params[:id_organization] %>
 
       </br>
       <%= f.submit "Create campaign" %>
