@@ -1,9 +1,8 @@
-<div class="centered-div">
-<h1>Registration</h1>
-
-<div>
+<div class="row-volunteer">
+  <h1>Registration</h1>
+  <div class="wrapper-1">
 	<%= form_for(@organization) do |f| %>
-	
+
 		<%= f.label :name %>
 		<%= f.text_field :name %>
 
@@ -25,7 +24,7 @@
 
 		<%= f.label :description %>
 		<%= f.text_area :description, :size => "20x12"  %>
-		
+
 		<%= f.hidden_field :id_user, :value => current_user.id %>
 
 		<%= f.label "Category" %>
@@ -37,5 +36,7 @@
 	<% end %>
 
 	<%= session[:user_id] %>
+  </div>
 </div>
-</div>
+
+

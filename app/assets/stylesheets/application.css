@@ -50,7 +50,7 @@ footer p{
     background-color: #DDD;
     color: #FFF;
     background:
-    url("cover.jpg") no-repeat center center;
+    url("cover3.jpg") no-repeat center center;
     background-size: cover;
 }
 #main-info{
@@ -87,6 +87,13 @@ footer p{
 #main-map img{
     margin: 0px auto;
 }
+#new_campaign, #new_organization{
+    margin: 10px auto;
+    padding-left: 20px;
+    padding-top: 20px;
+    width: 400px;
+    height: 700px;
+}
 .image-wrapper{
     width: 561px;
     margin: 0 auto;
@@ -118,8 +125,12 @@ footer p{
 }
 .wrapper-1{
     width: 900px;
+    min-height: 400px;
     margin: 15px auto;
     padding-top: 1px;
+}
+.more-padding-1{
+    padding: 10px;
 }
 .user-photo{
     width: 200px;
@@ -131,7 +142,7 @@ footer p{
     height: 100%;
 }
 .user-bio{
-    margin-left: 20px;
+    margin-left: 220px;
     padding-left: 20px;
     width: 400px;
     height: 200px;
@@ -150,7 +161,8 @@ footer p{
     box-shadow: 2px 2px 2px #333;
 }
 .user-campaigns{
-    margin: 220px auto;
+    clear: both;
+    margin: 15px auto;
     width: 98%;
     height: 300px;
     padding-left: 20px;
@@ -170,6 +182,9 @@ footer p{
 .opacity-1{
     background-color: rgba(33,33,33, .7);
     color: #FFF;
+}
+.box-shadow{
+    box-shadow: 2px 2px 2px #CCC;
 }
 img.bg {
   min-height: 100%;
