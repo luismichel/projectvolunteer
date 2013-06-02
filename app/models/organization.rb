@@ -3,4 +3,5 @@ class Organization < ActiveRecord::Base
 
   belongs_to :user
   has_many :campaigns
+  has_many :organizationmemberships, foreign_key: "user_id", dependent: :destroy
 end

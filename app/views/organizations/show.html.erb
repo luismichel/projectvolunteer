@@ -1,14 +1,19 @@
-<p><%= @organization.name %></p>
-<div>
+<div class="centered-div">
+	<p><h1><%= @organization.name %></h1></p>
 	<p>
 		<%= @organization.description %></br>
 		<%= @organization.address_hq %></br>
 		<%= @organization.phone_number %></br>
 		<%= link_to @organization.website_url %></br>
+		<%= Category.find(@organization.id_category).name %>
 	</p>
 	<p>
 		Created by <%= link_to User.find(@organization.id_user).name, User.find(@organization.id_user) %>
 	</p>
+	<div><p><%= @organization.description %></p></div>
+
+	<%= button_to "Create campaign", {:controller => :campaigns, :action => 'new', :id => @organization.id }, :method => :post %>
 </div>
-<div><%= Category.find(@organization.id_category).name %></div>
-<div><%= @organization.description %></div>
+
+
+

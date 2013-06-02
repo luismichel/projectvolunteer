@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602011845) do
+ActiveRecord::Schema.define(:version => 20130602023139) do
 
   create_table "campaigns", :force => true do |t|
     t.integer  "id_campaign"
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(:version => 20130602011845) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "organization_memberships", :force => true do |t|
+    t.integer  "organization_id"
+    t.integer  "user_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "organization_memberships", ["organization_id", "user_id"], :name => "index_organization_memberships_on_organization_id_and_user_id", :unique => true
+  add_index "organization_memberships", ["organization_id"], :name => "index_organization_memberships_on_organization_id"
+  add_index "organization_memberships", ["user_id"], :name => "index_organization_memberships_on_user_id"
 
   create_table "organizations", :force => true do |t|
     t.integer  "id_organization"
