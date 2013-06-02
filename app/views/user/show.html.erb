@@ -1,1 +1,17 @@
-<h1><%= @user.name %></h1>
+<div class="row-volunteer">
+    <h1><%= @user.name %></h1>
+    <div class="wrapper-1">
+        <div class="user-photo left">
+            <img src=<%= @user.profile_pic %>>
+        </div>
+        <div class="user-bio left">
+            <h3> Bio: </h3>
+            <p><%= @user.bio %></p>
+        </div>
+        <div class="user-badges right">
+        </div>
+        <div class="user-campaigns">
+            <h3>Campaigns</h3>
+        </div>
+    </div>
+</div>
