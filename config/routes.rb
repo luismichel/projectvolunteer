@@ -3,6 +3,8 @@ ProjectVolunteer::Application.routes.draw do
   resources :users, :controller => 'user'
   resources :campaigns, :controller => 'campaign'
   post '/campaigns/new', to: 'campaign#new'
+  post '/organization_memberships/create', to: 'organization_memberships#create'
+  get '/campaign_member/create', to: 'campaign_member#create'
 
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')

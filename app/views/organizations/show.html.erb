@@ -15,6 +15,14 @@
 	<%= button_to 'Create new campaign', new_campaign_path(:id_organization => @organization.id), :method => 'post' %>
 	<% end end %>
 
+	<% if(current_user.id != @organization.id_user) %>
+	<%= button_to "Join", :controller => :organization_memberships, 
+                           :action => 'create',
+                           :user_id => current_user.id,
+                           :organization_id => @organization.id,
+                           :method => :post %>
+	<% end %>
+
 	<ul>
 	<p>
 	<h3>Campaigns</h3>
