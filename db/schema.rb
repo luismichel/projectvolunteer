@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602044324) do
+ActiveRecord::Schema.define(:version => 20130602045248) do
 
   create_table "campaigns", :force => true do |t|
     t.integer  "id_campaign"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130602044324) do
     t.integer  "id_category"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "id_user"
   end
 
   create_table "categories", :force => true do |t|

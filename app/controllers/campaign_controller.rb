@@ -9,15 +9,15 @@ class CampaignController < ApplicationController
 
 	def create
 		if(current_user)
-			@campaign = Campaign.new(params[:user])
+			@campaign = Campaign.new(params[:campaign])
 
 		    respond_to do |format|
-		      if @user.save
-		        format.html { redirect_to(@user, :notice => 'User was successfully created.') }
-		        format.xml  { render :xml => @user, :status => :created, :location => @user }
+		      if @campaign.save
+		        format.html { redirect_to(@campaign, :notice => 'Campaign was successfully created.') }
+		        format.xml  { render :xml => @campaign, :status => :created, :location => @campaign }
 		      else
 		        format.html { render :action => "new" }
-		        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+		        format.xml  { render :xml => @campaign.errors, :status => :unprocessable_entity }
 		      end
 		    end
 		else
@@ -29,6 +29,10 @@ class CampaignController < ApplicationController
 	end
 
 	def update
+	end
+
+	def show
+		@campaign = Campaign.find(params[:id])
 	end
 
 end

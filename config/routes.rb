@@ -1,7 +1,9 @@
 ProjectVolunteer::Application.routes.draw do
 
   resources :users, :controller => 'user'
-  resources :campaigns, :controller => 'campaign'
+  resources :campaigns, :controller => 'campaign' do
+    post :new, :on => :collection
+  end
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
