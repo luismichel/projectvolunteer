@@ -11,7 +11,7 @@
 	</p>
 	<div><p><%= @organization.description %></p></div>
 
-	<%= button_to "Create campaign", {:controller => :campaigns, :action => 'new', :id => @organization.id }, :method => :post %>
+	<%= button_to "Create campaign", {:controller => :campaigns, :action => 'new', :id => @organization.id }, :method => :get %>
 </div>
 
 

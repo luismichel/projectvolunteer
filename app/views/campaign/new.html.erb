@@ -1,0 +1,24 @@
+<h1>Create a new campaign</h1>
+<%= form_for(@campaign) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :economic_goal %>
+  <%= f.text_field :economic_goal %>
+
+  <%= f.label :man_power_goal %>
+  <%= f.text_field :man_power_goal %>
+
+  <%= f.label :date_goal %>
+  <%= f.text_field :date_goal %>
+
+  <%= f.label "Category" %>
+		<%= select('campaign', 'id_category', Category.all.collect  {|category| [category.					name, category.id]}) %>
+
+</br>
+  <%= f.submit "Create campaign" %>
+<% end %>
