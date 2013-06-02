@@ -57,7 +57,7 @@
                         <%= link_to "Sign out", signout_path, id: "sign_out", class: "login-action right" %>
                         <%= link_to  current_user.name ,"/profile", class:"login-name right" %>
                       <% else %>
-                        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+                        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class:"right"%>
                       <% end %>
                   </div>
               </div><!--/.nav-collapse -->
