@@ -21,6 +21,9 @@
       <%= f.label :date_goal %>
       <%= f.text_field :date_goal %>
 
+      <%= f.label :date_event %>
+      <%= f.text_field :date_event %>
+
       <%= f.label "Category" %>
         <%= select('campaign', 'id_category', Category.all.collect  {|category| [category.          name, category.id]}) %>
       <%= f.hidden_field :id_user, :value => current_user.id %>

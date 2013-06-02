@@ -1,10 +1,11 @@
-<%= @campaigns.each do |campaign| %>
+<% @campaigns.each do |campaign| %>
 <div class="image-grid">
     <div class="campaign-item left">
         <div class="campaign-picture">
 		<%= image_tag(campaign.avatar.url(:small), :alt => "campaign_cover", :class => "bw") %>
         </div>
         <p class="campaign-text"><%= campaign.description[0..100] %><%= if(campaign.description.length > 100) then link_to(" . . .", campaign) end%></p>
+	<p><%= Category.find(campaign.id_category).name %></p>
         <div class="resources-block">
             <div class="resources-name left">
                 Donors
