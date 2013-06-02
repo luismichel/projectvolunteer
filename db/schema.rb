@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602001110) do
+ActiveRecord::Schema.define(:version => 20130602011845) do
 
   create_table "campaigns", :force => true do |t|
     t.integer  "id_campaign"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20130602001110) do
     t.integer  "id_category"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.text     "description"
   end
 
 # Could not dump table "users" because of following StandardError
