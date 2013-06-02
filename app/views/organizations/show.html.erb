@@ -1,1 +1,14 @@
-<h1><%= @organization.name %></h1>
+<p><%= @organization.name %></p>
+<div>
+	<p>
+		<%= @organization.description %></br>
+		<%= @organization.address_hq %></br>
+		<%= @organization.phone_number %></br>
+		<%= link_to @organization.website_url %></br>
+	</p>
+	<p>
+		Created by <%= link_to User.find(@organization.id_user).name, User.find(@organization.id_user) %>
+	</p>
+</div>
+<div><%= Category.find(@organization.id_category).name %></div>
+<div><%= @organization.description %></div>

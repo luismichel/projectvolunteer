@@ -7,6 +7,32 @@ end
 def index
 end
 
+def edit
+
+	@organization = Organization.find(params[:id])
+
+	if(!current_user)
+		redirect_to @organization
+	else 	if(current_user[:id] != @organization.id_user)
+		redirect_to @organization
+		end
+	end
+
+end
+
+
+def update
+
+	@organization = Organization.find(params[:id])
+	
+	if @organization.update_attributes(params[:organization])
+		redirect_to @organization
+	else
+		render "edit"
+	end
+
+end
+
 def show
 
 	@organization = Organization.find(params[:id])
