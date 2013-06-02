@@ -13,7 +13,6 @@
     <![endif]-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -36,41 +35,50 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
-    <div id="main-wrapper">
-        <div class="navbar navbar-top">
-          <div class="navbar-inner">
-            <div class="container-fluid">
-              <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </a>
-              <a class="brand" href="#">ProjectVolunteer</a>
-              <div class="container-fluid nav-collapse">
-                <ul class="nav">
-                  <li><%= link_to "Home", "/path1"  %></li>
-                  <li><%= link_to "Organizations", "/path2"  %></li>
-                  <li><%= link_to "About", "/path3"  %></li>
-                </ul>
-                  <div id="user_nav" class="right">
-                      <% if current_user %>
-                        <%= link_to "Sign out", signout_path, id: "sign_out", class: "login-action right" %>
-                        <%= link_to  current_user.name ,"/profile", class:"login-name right" %>
-                      <% else %>
-                        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-                      <% end %>
-                  </div>
-              </div><!--/.nav-collapse -->
-            </div>
-          </div>
+
+    <div class="navbar navbar-fluid-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">ProjectVolunteer</a>
+          <div class="container-fluid nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "Link1", "/path1"  %></li>
+              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Link3", "/path3"  %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
         </div>
-
-        <%= yield %>
-
-        <footer>
-            <p>&copy; Volunteer </p>
-        </footer>
+      </div>
     </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <li><%= link_to "Link1", "/path1"  %></li>
+              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Link3", "/path3"  %></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <%= bootstrap_flash %>
+          <%= yield %>
+        </div>
+      </div><!--/row-->
+
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+
+    </div> <!-- /container -->
 
     <!-- Javascripts
     ================================================== -->
