@@ -58,4 +58,9 @@ def create
 	end
 end
 
+
+def join
+	@user = User.find(params[:id])
+end
+
 end

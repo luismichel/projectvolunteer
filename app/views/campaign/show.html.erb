@@ -1,6 +1,6 @@
 <h1><%= @campaign.name %></h1>
 <ul>
 <li><p><%= @campaign.description %></p></li>
-<li><p>Belongs to <%= link_to(Organization.find(@campaign.id_organization).name, Organization.find(@campaign.id_user)) %></p></li>
+<li><p>Belongs to <%= link_to(Organization.find(@campaign.id_organization).name, Organization.find(@campaign.id_organization)) %></p></li>
 <li><p>Started by <%= link_to(User.find(@campaign.id_user).name, User.find(@campaign.id_user) )   %></p></li>
 </ul>
