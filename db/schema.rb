@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601210954) do
+ActiveRecord::Schema.define(:version => 20130602001110) do
 
   create_table "campaigns", :force => true do |t|
     t.integer  "id_campaign"
@@ -48,22 +48,7 @@ ActiveRecord::Schema.define(:version => 20130601210954) do
     t.datetime "updated_at",      :null => false
   end
 
-  create_table "users", :force => true do |t|
-    t.integer  "id_user"
-    t.string   "name"
-    t.integer  "age"
-    t.string   "gender"
-    t.string   "facebook_token"
-    t.text     "bio"
-    t.boolean  "is_active"
-    t.string   "email"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
-    t.string   "profile_pic"
-  end
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'password_field' for column 'password'
 
 end

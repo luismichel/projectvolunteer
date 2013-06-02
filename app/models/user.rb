@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :age, :bio, :email, :facebook_token, :gender, :id_user, :is_active, :name
+  attr_accessible :age, :bio, :email, :facebook_token, :gender, :id_user, :is_active, :name, :password, :password_confirmation
 
   has_many :organizations
 

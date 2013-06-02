@@ -1,10 +1,14 @@
 ProjectVolunteer::Application.routes.draw do
 
+  resources :users, :controller => 'user'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
   root :to => 'home#index'
   get "/login", to: 'home#login'
+  get "/signup", to: 'user#new'
+  get "/user/:id", to: 'user#show'
+  get "/profile", to: 'user#show'
 
   resources :organizations
 
