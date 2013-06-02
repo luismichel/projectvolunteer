@@ -2,14 +2,17 @@ class OrganizationsController < ApplicationController
 
 def new
 
-	if(!current_user)
-		redirect_to "/login"
-	end
+	#if(!current_user)
+	#	redirect_to "/login"
+	#end
 
 	@organization = Organization.new
 end
 
 def index
+
+	@organizations = Organization.all
+
 end
 
 def edit

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602023139) do
+ActiveRecord::Schema.define(:version => 20130602044324) do
 
   create_table "campaigns", :force => true do |t|
     t.integer  "id_campaign"
@@ -55,9 +55,13 @@ ActiveRecord::Schema.define(:version => 20130602023139) do
     t.datetime "register_date"
     t.integer  "id_user"
     t.integer  "id_category"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.text     "description"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 # Could not dump table "users" because of following StandardError

@@ -1,0 +1,10 @@
+<div class="centered-div">
+<ul>
+<% @organizations.each do |organization| %>
+<li class="organization-grid-item">
+  <%= image_tag organization.avatar.url(:thumb) %></br>
+  <%= link_to organization.name, organization %>
+</li>
+<% end %>
+</ul>
+</div>

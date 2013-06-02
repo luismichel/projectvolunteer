@@ -1,7 +1,6 @@
 <div class="centered-div">
-	<p><h1><%= @organization.name %></h1></p>
+	<p><%= image_tag @organization.avatar.url(:thumb) %><h1><%= @organization.name %></h1></p>
 	<p>
-		<%= @organization.description %></br>
 		<%= @organization.address_hq %></br>
 		<%= @organization.phone_number %></br>
 		<%= link_to @organization.website_url %></br>
