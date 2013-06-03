@@ -1,41 +1,91 @@
 <div class="row-volunteer">
-  <h1>Registration</h1>
-  <div class="wrapper-1">
-	<%= form_for(@organization) do |f| %>
+	<% if flash[:success] %>
+      <p class="alert alert-success"><%= flash[:success] %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="alert alert-error"><%= flash[:error] %></p>
+    <% end %>
 
-		<%= f.label :name %>
-		<%= f.text_field :name %>
+    <% if(@organization.errors.size > 0 ) %>
+    	<div class="alert alert-error">
+    		<ul>
+		    <% @organization.errors.full_messages.each do |message| %>
+		    	<li><%= message %></li>
+		    <% end %>
+	    	</ul>
+		</div>
+    <% end %>
+  <h3>Organization information</h3>
+  <div >
+	<%= form_for @organization, :html => { :class => "form-horizontal", :id => "organization-form" } do |f|  %>
+		<div class="control-group">
+			<%= label_tag :name, nil, :class => "control-label"%>
+			
+			<div class="controls">
+				<%= f.text_field :name %>
+			</div>
+		</div>
+		<div class="control-group">
+			<%= label_tag "Logo", nil, :class => "control-label"%>
+			
+			<div class="controls">
+				<%= f.file_field :avatar %>
+			</div>
+		</div>
+		<div class="control-group">
+			<%= label_tag :address_hq, nil, :class => "control-label"%>
+			
+			<div class="controls">
+				<%= f.text_field :address_hq %>
+			</div>
+		</div>
+		<div class="control-group">
+			<%= label_tag :phone_number, nil, :class => "control-label"%>
+			
+			<div class="controls">
+				<%= f.text_field :phone_number %>
+			</div>
+		</div>
+		<div class="control-group">
+			<%= label_tag :website_url, nil, :class => "control-label"%>
+			
+			<div class="controls">
+				<%= f.text_field :website_url %>
+			</div>
+		</div>
 
-		<%= f.label "Logo" %>
-		<%= f.file_field :avatar %>
-
-		<%= f.label :address_hq %>
-		<%= f.text_field :address_hq %>
-
-		<%= f.label :phone_number %>
-		<%= f.text_field :phone_number %>
-
-		<%= f.label :website_url %>
-		<%= f.text_field :website_url %>
-
-
-		<%= f.label :register_date %>
-		<%= f.text_field :register_date %>
-
-		<%= f.label :description %>
-		<%= f.text_area :description, :size => "20x12"  %>
+		<div class="control-group">
+			<%= label_tag :register_date, nil, :class => "control-label"%>
+			
+			<div class="controls">
+				<%= f.text_field :register_date %>
+			</div>
+		</div>
+		<div class="control-group">
+			<%= label_tag :description, nil, :class => "control-label"%>
+			
+			<div class="controls">
+				<%= f.text_area :description, :size => "20x12"  %>
+			</div>
+		</div>
 
 		<%= f.hidden_field :id_user, :value => current_user.id %>
 
-		<%= f.label "Category" %>
-		<%= select('organization', 'id_category', Category.all.collect  {|category| [category.name, category.id]}) %>
+		<div class="control-group">
+			<%= label_tag "Category", nil, :class => "control-label"%>
+			<div class="controls">
+				<%= select('organization', 'id_category', Category.all.collect  {|category| [category.name, category.id]}) %>
+			</div>
+		</div>
 
 		<p>
-		<%= f.submit "Create organization" %>
+		<div class="form-actions">
+			<%= f.submit "Create organization", :class => 'btn btn-primary' %>
+			<%= button_tag "Cancel", :type => 'button', :class => 'btn' %>
+		</div>
 		</p>
+		
 	<% end %>
-
-	<%= session[:user_id] %>
   </div>
 </div>
 

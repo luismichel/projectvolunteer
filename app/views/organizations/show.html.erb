@@ -1,4 +1,10 @@
 <div class="centered-div">
+	<% if flash[:success] %>
+      <p class="alert alert-success"><%= flash[:success] %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="alert alert-error"><%= flash[:error] %></p>
+    <% end %>
 	<p><%= image_tag @organization.avatar.url(:thumb) %><h1><%= @organization.name %></h1></p>
 	<p>
 		<%= @organization.address_hq %></br>
@@ -15,13 +21,13 @@
 	<%= button_to 'Create new campaign', new_campaign_path(:id_organization => @organization.id), :method => 'post' %>
 	<% end end %>
 
-	<% if(current_user.id != @organization.id_user) %>
+	<% if(current_user) then if(current_user.id != @organization.id_user) %>
 	<%= button_to "Join", :controller => :organization_memberships, 
                            :action => 'create',
                            :user_id => current_user.id,
                            :organization_id => @organization.id,
                            :method => :post %>
-	<% end %>
+	<% end end%>
 
 	<ul>
 	<p>

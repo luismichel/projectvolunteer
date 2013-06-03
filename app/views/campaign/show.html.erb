@@ -1,4 +1,10 @@
 <div class="campaign-description">
+    <% if flash[:success] %>
+      <p class="alert alert-success"><%= flash[:success] %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="alert alert-error"><%= flash[:error] %></p>
+    <% end %>
     <h1><%= @campaign.name %></h1>
     <div class="campaign-picture">
         <%= image_tag(@campaign.avatar.url(:normal), :alt => "campaign") %>
@@ -20,11 +26,28 @@
         </div>
         <span class="left padding-left-1 bolder result"> 60% </span>
         <div class="btn-support right margin-right-1">
+<<<<<<< HEAD
 
 	<%= link_to "Volunteer", :controller => :campaign_member,
                            :action => 'create',
                            :id_user => current_user.id,
                            :id_campaign => @campaign.id %>
+=======
+            
+            <% if(current_user) then if(current_user.id != @campaign.id_user) %>
+            	<%= link_to "Volunteer", :controller => :campaign_member, 
+                                       :action => 'create',
+                                       :id_user => current_user.id,
+                                       :id_campaign => @campaign.id %>
+               <% else %>
+                    <i class="icon-ok"><%= "Volunteered!" %></i>
+                <% end %>
+                <% else %>
+                    <%= link_to "Volunteer", :controller => :campaign_member, 
+                                       :action => 'create',
+                                       :id_campaign => @campaign.id %>
+            <% end %>
+>>>>>>> e72b3839696b0c7d52c914d3a1438f07bab913de
 
         </div>
     </div>
