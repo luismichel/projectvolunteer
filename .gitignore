@@ -13,3 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+config/initializers/omniauth.rb
+app/assets/javascripts/facebook.js.coffee.erb
+

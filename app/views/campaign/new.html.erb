@@ -1,4 +1,10 @@
 <div class="row-volunteer">
+  <% if flash[:success] %>
+      <p class="alert alert-success"><%= flash[:success] %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="alert alert-error"><%= flash[:error] %></p>
+    <% end %>
   <h1>Create a new campaign</h1>
   <div class="wrapper-1">
     <%= form_for(@campaign) do |f| %>

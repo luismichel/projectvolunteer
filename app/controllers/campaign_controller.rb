@@ -17,9 +17,11 @@ class CampaignController < ApplicationController
 
 		    respond_to do |format|
 		      if @campaign.save
+		      	flash[:success] = 'Campaign was successfully created.'
 		        format.html { redirect_to(@campaign, :notice => 'Campaign was successfully created.') }
 		        format.xml  { render :xml => @campaign, :status => :created, :location => @campaign }
 		      else
+		      	flash[:error] = 'An error ocurred creating the campaign.'
 		        format.html { render :action => "new" }
 		        format.xml  { render :xml => @campaign.errors, :status => :unprocessable_entity }
 		      end

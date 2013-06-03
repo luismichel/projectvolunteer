@@ -9,6 +9,10 @@ class OrganizationMembershipsController < ApplicationController
 		@organizationMemberships.organization_id = params[:organization_id]
 		if @organizationMemberships.save
 			redirect_to '/profile'
+		else
+			
+			flash[:error] = "An error ocurred joining \"" + Organization.find(params[:organization_id]).name + "\""
+			redirect_to Organization.find(params[:organization_id])
 		end
 	end
 end
