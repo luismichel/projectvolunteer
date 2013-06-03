@@ -164,7 +164,8 @@ footer p{
     clear: both;
     margin: 15px auto;
     width: 98%;
-    height: 300px;
+    min-height: 300px;
+    height:auto;
     padding-left: 20px;
     background-color: #F7F7F7;
     border: 1px solid #CCC;
