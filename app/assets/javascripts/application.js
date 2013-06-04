@@ -16,7 +16,10 @@
 //= require modal
 //= require_tree .
 $(function() {
-    $("#main-h1").animate({left : "+=145px"},{ queue: false, duration: 400 });
+    $("#main-photo .absolute-1").hide();
+    $("#main-h1").animate({left : "+=1400px"},1200, "linear", function(){
+      $("#main-photo .absolute-1").fadeIn(700);
+    });
 
     $("#btn-donate").bind("click", function(e){
         console.log("SEM Vamos!");
