@@ -8,7 +8,15 @@ jQuery ->
 
 
 window.fbAsyncInit = ->
-  FB.init(appId: '<%= ENV["FACEBOOK_APP_ID"] %>', cookie: true)
+  # This is just for development purposes
+  request = $.getJSON("/extras/vars.json");
+
+  request.done (data) ->
+    FB.init(appId:  data.app_id , cookie: true)
+
+  # if we dont have JSON file, we should use environment variables - CORRECT WAY
+  request.fail () ->
+    FB.init(appId: '<%= ENV["FACEBOOK_APP_ID"] %>', cookie: true)
 
   $('#sign_in').click (e) ->
     e.preventDefault()

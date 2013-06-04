@@ -14,6 +14,7 @@
 /log/*.log
 /tmp
 /public/system/*
+/public/extras/*
 #config/initializers/omniauth.rb
 #app/assets/javascripts/facebook.js.coffee.erb
 *.out

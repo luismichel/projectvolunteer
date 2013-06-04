@@ -1,3 +1,4 @@
+require 'json'  # Work around - remove in production
 
 def ominiauth_wrapper(app_id, app_secret)
 
@@ -7,16 +8,15 @@ def ominiauth_wrapper(app_id, app_secret)
 end
 
 OmniAuth.config.logger = Rails.logger
-filename = Rails.root.to_s + "/config/initializers/vars.volunteer.txt"
+filename = Rails.root.to_s + "/public/extras/vars.json"
 if File.exists?(filename)
-    OmniAuth.config.logger.info "FACEBOOK Will use file"
-    vars = Array.new
-    File.foreach(filename) do |line|
-        vars << line.chop if line.length > 1
-    end
-    OmniAuth.config.logger.info "APP_ID %s \n SECRET_ID %s" % ([vars[0], vars[1]])
-    ENV['FACEBOOK_APP_ID'] = vars[0]
-    ENV['FACEBOOK_SECRET'] = vars[1]
+    OmniAuth.config.logger.info "FACEBOOK Will use JSON"
+    vars_hash = JSON.parse( IO.read(filename) )
+
+
+    OmniAuth.config.logger.info "APP_ID %s \n SECRET_ID %s" % ([vars_hash["app_id"], vars_hash["app_secret"]])
+    ENV['FACEBOOK_APP_ID'] = vars_hash["app_id"]
+    ENV['FACEBOOK_SECRET'] = vars_hash["app_secret"]
 else
     OmniAuth.config.logger.info "FACEBOOK Will use environment variables"
 end
