@@ -26,16 +26,10 @@
         </div>
         <span class="left padding-left-1 bolder result"> 60% </span>
         <div class="btn-support right margin-right-1">
-<<<<<<< HEAD
 
-	<%= link_to "Volunteer", :controller => :campaign_member,
-                           :action => 'create',
-                           :id_user => current_user.id,
-                           :id_campaign => @campaign.id %>
-=======
-            
+
             <% if(current_user) then if(current_user.id != @campaign.id_user) %>
-            	<%= link_to "Volunteer", :controller => :campaign_member, 
+            	<%= link_to "Volunteer", :controller => :campaign_member,
                                        :action => 'create',
                                        :id_user => current_user.id,
                                        :id_campaign => @campaign.id %>
@@ -43,11 +37,10 @@
                     <i class="icon-ok"><%= "Volunteered!" %></i>
                 <% end %>
                 <% else %>
-                    <%= link_to "Volunteer", :controller => :campaign_member, 
+                    <%= link_to "Volunteer", :controller => :campaign_member,
                                        :action => 'create',
                                        :id_campaign => @campaign.id %>
             <% end %>
->>>>>>> e72b3839696b0c7d52c914d3a1438f07bab913de
 
         </div>
     </div>
@@ -65,5 +58,5 @@
     </div>
 </div>
 <div id="donate-slides" class="hidden">
-
+    <p> Work in progress </p>
 </div>
