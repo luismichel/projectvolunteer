@@ -151,7 +151,7 @@ footer p{
     height: 200px;
     border: 1px solid #CCC;
     background-color: #F7F7F7;
-    box-shadow: 2px 2px 2px #333;
+    /*box-shadow: 2px 2px 2px #333;*/
 }
 .user-badges{
     margin-left: 20px;
@@ -161,7 +161,7 @@ footer p{
     height: 200px;
     background-color: #F0F0F0;
     border: 1px solid #CCC;
-    box-shadow: 2px 2px 2px #333;
+    /*box-shadow: 2px 2px 2px #333;*/
 }
 .user-campaigns{
     clear: both;
@@ -172,7 +172,7 @@ footer p{
     padding-left: 20px;
     background-color: #F7F7F7;
     border: 1px solid #CCC;
-    box-shadow: 2px 2px 2px #333;
+    /*box-shadow: 2px 2px 2px #333;*/
 }
 .absolute-1{
     position: absolute;

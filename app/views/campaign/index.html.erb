@@ -1,4 +1,13 @@
 <% @campaigns.each do |campaign| %>
+<% 
+#enviamos la cantidad de gente que es miembro de la campaña
+@members = 1 + CampaignMember.where('id_campaign = ? ', campaign.id).size
+
+#porcentaje completado
+@porcentaje = (@members / campaign.man_power_goal.to_f) * 100
+if @porcentaje > 100 then @porcentaje = 100 end
+%>
+
 <div class="image-grid">
     <div class="campaign-item left">
         <div class="campaign-picture">
@@ -8,7 +17,7 @@
 	<p><%= Category.find(campaign.id_category).name %></p>
         <div class="resources-block">
             <div class="resources-name left">
-                Donors
+                Donations
             </div>
             <div class="resources-quantity left">
                 <%= rand(80) %> %
@@ -19,7 +28,7 @@
                 Volunteers
             </div>
             <div class="resources-quantity left">
-                <%= rand(80) %> %
+                <%= @porcentaje.to_i %> %
             </div>
         </div>
            <%= link_to image_tag("btn_vermas.png") , campaign, :class => "img-btn right" %>

@@ -19,12 +19,12 @@
         The event will take place in <%= @campaign.date_event %>
     </p>
     <div "bar-wrapper">
-        <h3>Human Power</h3>
+        <h3>Volunteers</h3>
         <div class="bar-counter left">
-            <div class="bar-graphic left">
+            <div class="bar-graphic left" style="width:<%= @porcentaje %>% !important">
             </div>
         </div>
-        <span class="left padding-left-1 bolder result"> 60% </span>
+        <span class="left padding-left-1 bolder result"> <%= @porcentaje.to_i %> % </span>
         <div class="btn-support right margin-right-1">
 
 

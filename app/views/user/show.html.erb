@@ -7,14 +7,14 @@
     <% end %>
     <h1><%= @user.name %></h1>
     <div class="wrapper-1">
-        <div class="user-photo left">
-            <img src=<%= @user.profile_pic %>>
+        <div class="user-photo left" style="background-image:url(<%= @user.profile_pic %>); background-size:cover;">
+            <!-- <img src=<%= @user.profile_pic %> -->
         </div>
         <div class="user-badges right">
         </div>
         <div class="user-bio">
             <h3> Bio: </h3>
-            <p><%= @user.bio %></p>
+            <p><%= @user.bio[0..300] %><% if @user.bio.length > 300 then %>. . .&nbsp;<span class="label label-info">More</span><% end %></p>
         </div>
 
 		<div class="user-campaigns">

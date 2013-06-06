@@ -9,6 +9,7 @@ class CampaignController < ApplicationController
 
 	def index
 		@campaigns = Campaign.all
+
 	end
 
 	def create
@@ -39,6 +40,16 @@ class CampaignController < ApplicationController
 
 	def show
 		@campaign = Campaign.find(params[:id])
+
+
+		#enviamos la cantidad de gente que es miembro de la campaña
+		@members = 1 + CampaignMember.where('id_campaign = ? ', params[:id]).size
+
+		#porcentaje completado
+		@porcentaje = (@members / @campaign.man_power_goal.to_f) * 100
+
+		if @porcentaje > 100 then @porcentaje = 100 end
+
 	end
 
 end
