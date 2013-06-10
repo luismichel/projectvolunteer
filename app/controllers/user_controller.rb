@@ -27,6 +27,10 @@ class UserController < ApplicationController
 		else
 			@user = User.find(params[:id])
 		end
+		# temporal work around, remove when this is solved with a good fix :)
+		if @user.bio == nil
+			@user.bio = ""
+		end
 	end
 
 	def edit
@@ -50,7 +54,7 @@ class UserController < ApplicationController
 		        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
 		      end
 		    end
-		    
+
 		else
 			redirect_to root_url
 		end
@@ -58,7 +62,7 @@ class UserController < ApplicationController
 
 
 	def self.authenticate(username_or_email="", login_password="")
-		if  EMAIL_REGEX.match(username_or_email)    
+		if  EMAIL_REGEX.match(username_or_email)
 			user = User.find_by_email(username_or_email)
 		else
 			user = User.find_by_username(username_or_email)
@@ -69,7 +73,7 @@ class UserController < ApplicationController
 		else
 			return false
 		end
-	end 
+	end
 
 
 end
