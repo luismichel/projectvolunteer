@@ -12,38 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require twitter/bootstrap
-//= require modal
 //= require_tree .
-$(function() {
-    $("#main-photo .absolute-1").hide();
-    $("#main-h1").animate({left : "+=1400px"},1200, "linear", function(){
-      $("#main-photo .absolute-1").fadeIn(700);
-    });
 
-    $("#btn-donate").bind("click", function(e){
-        console.log("SEM Vamos!");
-        e.preventDefault();
-        $("#donate-slides").toggleClass("hidden");
-        var offset = $("#donate-slides").offset();
-        offset.left -= 20;
-        offset.top -= 20;
-        $('html, body').animate({
-            scrollTop: offset.top,
-            scrollLeft: offset.left
-        });
-
-        $(function() {
-            $( "#slider-range-max" ).slider({
-              range: "max",
-              min: 1,
-              max: 10,
-              value: 2,
-              slide: function( event, ui ) {
-                $( "#amount" ).val( ui.value );
-              }
-            });
-            $( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
-        });
-    });
-});
