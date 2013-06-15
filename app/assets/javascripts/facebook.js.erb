@@ -1,0 +1,54 @@
+jQuery(function() {
+  $('body').prepend('<div id="fb-root"></div>');
+  $.ajax({
+    url: "" + window.location.protocol + "//connect.facebook.net/en_US/all.js",
+    dataType: 'script',
+    cache: true
+  });
+});
+
+window.fbAsyncInit = function(){
+  // This is just for development purposes
+  var request = $.getJSON("/extras/vars.json");
+
+  var initTheJSONWay = function(){
+    FB.init({
+      appId: data.app_id,
+      cookie: true
+    });
+  };
+  var initTheCorretWay = function(){
+    FB.init({
+      appId: '<%= ENV["FACEBOOK_APP_ID"] %>',
+      cookie: true
+    });
+  }
+
+  var signInHandler = function(e){
+    e.preventDefault();
+    FB.login( function(response){
+      debugger;
+      if (response.authResponse) {
+        console.log("FACEBOOK! sign_in");
+        window.location = '/auth/facebook/callback';
+      }
+    });
+  };
+
+  var signOutHandler = function(e){
+    FB.getLoginStatus( function(response){
+      if (response.authResponse){
+        return FB.logout();
+      }
+    });
+    return true;
+  }
+
+  request.done(initTheJSONWay);
+  // if we dont have JSON file, we should use environment variables - CORRECT WAY
+  request.fail(initTheCorretWay);
+
+  $('#sign_in').bind('click', signInHandler);
+
+  $('#sign_out').bind('click', signOutHandler);
+}
