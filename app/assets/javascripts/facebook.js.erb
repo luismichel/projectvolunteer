@@ -11,7 +11,7 @@ window.fbAsyncInit = function(){
   // This is just for development purposes
   var request = $.getJSON("/extras/vars.json");
 
-  var initTheJSONWay = function(){
+  var initTheJSONWay = function(data){
     FB.init({
       appId: data.app_id,
       cookie: true
